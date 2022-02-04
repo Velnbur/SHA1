@@ -6,6 +6,10 @@ BUILD_DIR := build
 CC := gcc
 CC_FLAGS := -Wall -g -I$(INCLUDE_DIR)
 
+ifdef DEBUG
+CC_FLAGS += -DDEBUG
+endif
+
 makedirs:
 	@echo "[INFO]: Creating 'build' and 'bin' directories"
 	@mkdir -p $(BIN_DIR) $(BUILD_DIR)
@@ -27,7 +31,7 @@ TESTS_DIR := tests
 
 build_tests: makedirs
 	@echo "[INFO]: Building tests"
-	@$(CC) $(CC_FLAGS) $(TESTS_DIR)/tests.c -o $(BIN_DIR)/tests
+	$(CC) $(CC_FLAGS) $(TESTS_DIR)/tests.c -o $(BIN_DIR)/tests
 
 test: build_tests
 	@$(BIN_DIR)/tests
