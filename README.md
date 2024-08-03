@@ -1,14 +1,15 @@
-# My realisation of SHA1 hash-function algoritm
+# My implementation of SHA1 hash-function algorithm
 
 ## Usage
-For developing you may just copy header `include/sha1.h` and source `src/sha1.c` files to your project.
+
+For development you may just copy header `include/sha1.h` and source `src/sha1.c` files to your project.
 
 If you want to run tests:
 ```shell
 make test
 ```
 
-If you want to create object file for further compiling:
+If you want to create an object file for further compiling:
 ```shell
 make build
 ```
